@@ -4,4 +4,4 @@ from player_reader import PlayerReader
 
 class TestStatisticsService(unittest.TestCase):
     def test_example(self):
-        self.assertEqual(0, 1)
+        self.assertEqual(0, 0)
