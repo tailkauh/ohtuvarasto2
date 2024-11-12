@@ -22,3 +22,9 @@ class TestStatisticsService(unittest.TestCase):
 
     def test_init(self):
         self.assertEqual(hasattr(self.stats, "_players"), True)
+
+    def test_search_puuttuva_nimi(self):
+        self.assertEqual(self.stats.search("!#¤%&/()="), None)
+
+    def test_search_koko_nimi(self):
+        self.assertEqual(self.stats.search("Kurri").__str__(), "Kurri EDM 32 + 53 = 85") 
