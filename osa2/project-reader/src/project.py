@@ -1,17 +1,27 @@
 class Project:
-    def __init__(self, name, description, dependencies, dev_dependencies):
-        self.name = name
-        self.description = description
-        self.dependencies = dependencies
-        self.dev_dependencies = dev_dependencies
+    def __init__(self, tool_dict):
+        self.name = tool_dict['name']
+        self.description = tool_dict['description']
+        self.license = tool_dict['license']
 
-    def _stringify_dependencies(self, dependencies):
-        return ", ".join(dependencies) if len(dependencies) > 0 else "-"
+        self.authors = tool_dict['authors']
+        
+        self.dependencies = tool_dict['dependencies']
+        
+        self.dev_dependencies = tool_dict['group']['dev']['dependencies']
+
+    def _stringify_list(self, ls):
+        return "\n- " + "\n- ".join(ls)
 
     def __str__(self):
         return (
             f"Name: {self.name}"
             f"\nDescription: {self.description or '-'}"
-            f"\nDependencies: {self._stringify_dependencies(self.dependencies)}"
-            f"\nDevelopment dependencies: {self._stringify_dependencies(self.dev_dependencies)}"
+            f"\nLicense: {self.license or '-'}"
+            "\n"
+            f"\nAuthors: {self._stringify_list(self.authors)}"
+            "\n"
+            f"\nDependencies: {self._stringify_list(self.dependencies)}"
+            "\n"
+            f"\nDevelopment dependencies: {self._stringify_list(self.dev_dependencies)}"
         )
