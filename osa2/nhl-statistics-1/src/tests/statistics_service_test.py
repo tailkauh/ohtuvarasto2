@@ -28,3 +28,9 @@ class TestStatisticsService(unittest.TestCase):
 
     def test_search_koko_nimi(self):
         self.assertEqual(self.stats.search("Kurri").__str__(), "Kurri EDM 32 + 53 = 85") 
+
+    def test_team_ei_olemassa(self):
+        self.assertEqual(self.stats.team("JYP"), list())
+
+    def test_top_0(self):
+        self.assertEqual(self.stats.top(0)[0].__str__(), "Gretzky EDM 35 + 89 = 124")
