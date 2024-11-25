@@ -31,7 +31,8 @@ Register With Enough Long But Invalid Username And Valid Password
     
 
 Register With Valid Username And Too Short Password
-# ...
+    Input Credentials  ville  a1
+    Output Should Contain  Password should be at least 8 characters and contain other characters in addition to alphabets 
 
 Register With Valid Username And Long Enough Password Containing Only Letters
 # ...
