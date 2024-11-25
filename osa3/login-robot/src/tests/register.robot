@@ -20,7 +20,15 @@ Register With Too Short Username And Valid Password
     
 
 Register With Enough Long But Invalid Username And Valid Password
-# ...
+    Input Credentials  123  dfasvanlk32r3
+    Output Should Contain  Username should be at least 3 characters and containing only letters a-z
+    Input New Command
+    Input Credentials  ABK  djoiwfh092
+    Output Should Contain  Username should be at least 3 characters and containing only letters a-z
+    Input New Command
+    Input Credentials  ab1  fdewf99fjdso
+    Output Should Contain  Username should be at least 3 characters and containing only letters a-z
+    
 
 Register With Valid Username And Too Short Password
 # ...
