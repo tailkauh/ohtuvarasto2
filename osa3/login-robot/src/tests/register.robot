@@ -35,7 +35,9 @@ Register With Valid Username And Too Short Password
     Output Should Contain  Password should be at least 8 characters and not only consist of alphabets
 
 Register With Valid Username And Long Enough Password Containing Only Letters
-# ...
+    Input Credentials  ville  valleveli
+    Output Should Contain  Password should be at least 8 characters and not only consist of alphabets
+  
 
 *** Keywords ***
 Register Kalle And Input New Command
