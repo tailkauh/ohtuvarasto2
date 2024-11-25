@@ -1,5 +1,7 @@
 from entities.user import User
 import re
+# import sys
+# import pdb
 
 class UserInputError(Exception):
     pass
@@ -14,6 +16,8 @@ class UserService:
         self._user_repository = user_repository
 
     def check_credentials(self, username, password):
+        # pdb.Pdb(stdout=sys.__stdout__).set_trace()
+        
         if not username or not password:
             raise UserInputError("Username and password are required")
 
@@ -34,6 +38,8 @@ class UserService:
         return user
 
     def validate(self, username, password):
+        # pdb.Pdb(stdout=sys.__stdout__).set_trace()
+
         if not username or not password:
             raise UserInputError("Username and password are required")
 
