@@ -1,4 +1,5 @@
 from entities.user import User
+import re
 
 class UserInputError(Exception):
     pass
@@ -36,5 +37,5 @@ class UserService:
         if not username or not password:
             raise UserInputError("Username and password are required")
 
-        user = self._user_repository.find_by_username(username)
-
+        if not re.match("^[a-z]{3,}$", username):
+            raise UserInputError("Username should be at least 3 characters and containing only letters a-z")
