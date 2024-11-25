@@ -12,7 +12,12 @@ Register With Already Taken Username And Valid Password
     Output Should Contain  User with username kalle already exists 
 
 Register With Too Short Username And Valid Password
-#
+    Input Credentials  a  4djj894ur
+    Output Should Contain  Username should be at least 3 characters and containing only letters a-z
+    Input New Command
+    Input Credentials  jl  9fy82hdhsa
+    Output Should Contain  Username should be at least 3 characters and containing only letters a-z
+    
 
 Register With Enough Long But Invalid Username And Valid Password
 # ...
