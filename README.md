@@ -1,1 +1,1 @@
-# 2. konfigurointitehtävä
+# 2. ja 3. konfigurointitehtävä
