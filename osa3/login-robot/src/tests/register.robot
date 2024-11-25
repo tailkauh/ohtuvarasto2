@@ -1,6 +1,6 @@
 *** Settings ***
 Resource  resource.robot
-Test Setup  Create User Kalle And Input New Command
+Test Setup  Register Kalle And Input New Command
 
 *** Test Cases ***
 Register With Valid Username And Password
@@ -8,10 +8,11 @@ Register With Valid Username And Password
     Output Should Contain  New user registered
 
 Register With Already Taken Username And Valid Password
-# ...
+    Input Credentials  kalle  d3849328n
+    Output Should Contain  User with username kalle already exists 
 
 Register With Too Short Username And Valid Password
-# ...
+#
 
 Register With Enough Long But Invalid Username And Valid Password
 # ...
@@ -23,7 +24,6 @@ Register With Valid Username And Long Enough Password Containing Only Letters
 # ...
 
 *** Keywords ***
-Create User Kalle And Input New Command
-    Input New Command
+Register Kalle And Input New Command
     Create User  kalle  kalle123
     Input New Command

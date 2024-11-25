@@ -1,6 +1,5 @@
 from entities.user import User
 
-
 class UserInputError(Exception):
     pass
 
@@ -37,4 +36,5 @@ class UserService:
         if not username or not password:
             raise UserInputError("Username and password are required")
 
-        # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        user = self._user_repository.find_by_username(username)
+
