@@ -40,7 +40,7 @@ class UserService:
         if not re.match("^[a-z]{3,}$", username):
             raise UserInputError("Username should be at least 3 characters and containing only letters a-z")
 
-        if len(password) < 8:
+        if len(password) < 8 or re.match("^[a-zA-Z]+$", password):
             raise UserInputError(
                 "Password should be at least 8 characters and not only consist of alphabets"
             )
